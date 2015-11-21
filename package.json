@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "Libraries.io Dependency Sentinel",
   "main": "index.js",
+  "engines": {
+    "node": "5.1.x"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "author": "Mauro Pompilio",
