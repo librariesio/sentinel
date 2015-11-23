@@ -1,6 +1,6 @@
 # Libraries.io Sentinel
 
-Automated dependency updated.
+Automated dependency updates.
 
 ## Supported Languages
 
