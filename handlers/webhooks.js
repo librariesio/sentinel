@@ -9,7 +9,7 @@ function handler(req, res, next) {
   const gh = new GitHub(env.token, {cache: env.cache})
   const repo = new Repo(owner, repoName, gh)
 
-  let branchName = `update-${name}`
+  let branchName = `update-${name}-${version}`
 
   return repo.findOrCreateBranch(branchName)
   .then( (branchRef) => {
