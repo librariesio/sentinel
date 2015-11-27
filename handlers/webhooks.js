@@ -1,23 +1,25 @@
-import env    from '../config/environment'
-import GitHub from '../lib/github'
-import Repo   from '../lib/repo'
+'use strict'
+
+const env    = require('../config/environment')
+const GitHub = require('libhub')
+const Repo   = require('../lib/repo')
 
 function handler(req, res, next) {
-  let [owner, repoName] = req.body.repository.split('/')
-  let {name, version} = req.body
+  var [owner, repoName] = req.body.repository.split('/')
+  var {name, version} = req.body
 
   const gh = new GitHub(env.token, {cache: env.cache})
   const repo = new Repo(owner, repoName, gh)
 
-  let branchName = `update-${name}-${version}`
+  let branchName = `update-${name}-to-${version}`
 
   return repo.findOrCreateBranch(branchName)
   .then( (branchRef) => {
     return repo.updateManifest(branchRef, name, version)
   })
   .then( () => {
-    let title = `Update ${name}`
-    let body  = `Update ${name} to ${version} :shipit:`
+    let title = `Update ${name} to ${version}`
+    let body  = `Powered by [Libraries.io](https://libraries.io) \n\n :shipit:`
     let base  = 'master'
     let head  = branchName
 
@@ -27,7 +29,6 @@ function handler(req, res, next) {
     return res.send(pr)
   })
   .catch(next)
-
 }
 
-export default handler
+module.exports = handler

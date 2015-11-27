@@ -1,22 +1,18 @@
-import Promise  from 'bluebird'
-import memjs    from 'memjs'
+'use strict'
+
+const Promise = require('bluebird')
+const memjs   = require('memjs')
 
 const envName = process.env.NODE_ENV || 'development'
 const port    = process.env.PORT || 5000
 const token   = process.env.TOKEN
-
-// Node error handler
-
-process.on('uncaughtException', (err) => {
-  console.log('ERROR:\n', err)
-  console.log('STACK:\n', err.stack)
-});
 
 // Express error handler
 
 function errorHandler(err, req, res, next) {
   res.status(500)
   if (envName === 'development') {
+    console.log('Err:', err)
     res.send({error: err, stack: err.stack})
   } else {
     res.send({error: 'Something went wrong :('})
@@ -46,4 +42,4 @@ var env = {
   cache:        {set: set, get: get}
 }
 
-export default env
+module.exports = env;

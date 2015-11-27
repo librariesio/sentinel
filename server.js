@@ -1,9 +1,11 @@
-import Express          from 'express'
-import bodyParser       from 'body-parser'
-import serve_static     from 'serve-static'
-import compression      from 'compression'
-import env              from './config/environment'
-import WebhooksHandler  from './handlers/webhooks'
+'use strict'
+
+const Express          = require('express')
+const bodyParser       = require('body-parser')
+const serve_static     = require('serve-static')
+const compression      = require('compression')
+const env              = require('./config/environment')
+const WebhooksHandler  = require('./handlers/webhooks')
 
 const app = new Express()
 app.use(compression())
