@@ -15,12 +15,16 @@ function handler(req, res, next) {
 
   return repo.findOrCreateBranch(branchName)
   .then( (branchRef) => {
-    return repo.updateManifest(branchRef, name, version)
+    return Promise.all([
+      repo.updateManifest(branchRef, name, version),
+      repo.fetchDefaultBranch()
+    ])
   })
-  .then( () => {
+  .then( ([newCommit, defaultBranch]) => {
+
     let title = `Update ${name} to ${version}`
     let body  = `Powered by [Libraries.io](https://libraries.io) \n\n :shipit:`
-    let base  = 'master'
+    let base  = defaultBranch.name
     let head  = branchName
 
     return repo.createPullRequest(title, body, base, head)
