@@ -8,30 +8,30 @@ function handler(req, res, next) {
   var [owner, repoName] = req.body.repository.split('/')
   var {name, version} = req.body
 
+  let branchName = `update-${name}-to-${version}`
+
   const gh = new GitHub(env.token, {cache: env.cache})
   const repo = new Repo(owner, repoName, gh)
 
-  let branchName = `update-${name}-to-${version}`
-
-  return repo.findOrCreateBranch(branchName)
-  .then( (branchRef) => {
-    return Promise.all([
-      repo.updateManifest(branchRef, name, version),
-      repo.fetchDefaultBranch()
-    ])
+  return repo.checkIfUserIsCollaborator()
+  .then( (isCollaborator) => {
+    return isCollaborator ? repo : repo.fork()
   })
-  .then( ([newCommit, defaultBranch]) => {
+  .then( (repoOrFork) => {
+    return repoOrFork.findOrCreateBranch(branchName)
+    .then( (branchRef) => repoOrFork.updateBranch(branchRef, req.body) )
+    .then( () => repo.fetchDefaultBranch() )
+    .then( (defaultBranch) => {
 
-    let title = `Update ${name} to ${version}`
-    let body  = `Powered by [Libraries.io](https://libraries.io) \n\n :shipit:`
-    let base  = defaultBranch.name
-    let head  = branchName
+      let title = `Update ${name} to ${version}`
+      let body  = `Powered by [Libraries.io](https://libraries.io) \n\n :shipit:`
+      let base  = defaultBranch.name
+      let head  = repoOrFork.owner !== owner ? `${repoOrFork.owner}:${branchName}` : branchName
 
-    return repo.createPullRequest(title, body, base, head)
+      return repo.createPullRequest(title, body, base, head)
+    })
   })
-  .then( (pr) => {
-    return res.send(pr)
-  })
+  .then( (pr) => res.send(pr) )
   .catch(next)
 }
 
