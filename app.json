@@ -1,0 +1,14 @@
+{
+  "name": "Sentinel",
+  "description": "Automated dependency updates from Libraries.io webhooks",
+  "repository": "https://github.com/librariesio/sentinel",
+  "logo": "https://avatars3.githubusercontent.com/u/11243589?v=3&s=400",
+  "keywords": ["GitHub", "dependency", "node.js", "update", "Libraries.io"],
+  "env": {
+    "RACK_ENV": "production",
+    "TOKEN": {
+            "description": "Your GitHub OAuth Token",
+            "value": ""
+    }
+  }
+}
