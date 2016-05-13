@@ -4,7 +4,7 @@
   "dependencies": {
     "accepts": {
       "version": "1.3.3",
-      "from": "accepts@>=1.3.1 <1.4.0",
+      "from": "accepts@>=1.3.3 <1.4.0",
       "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.3.3.tgz"
     },
     "ansi-regex": {
@@ -93,21 +93,14 @@
       "resolved": "https://registry.npmjs.org/commander/-/commander-2.9.0.tgz"
     },
     "compressible": {
-      "version": "2.0.7",
-      "from": "compressible@>=2.0.7 <2.1.0",
-      "resolved": "https://registry.npmjs.org/compressible/-/compressible-2.0.7.tgz"
+      "version": "2.0.8",
+      "from": "compressible@>=2.0.8 <2.1.0",
+      "resolved": "https://registry.npmjs.org/compressible/-/compressible-2.0.8.tgz"
     },
     "compression": {
-      "version": "1.6.1",
+      "version": "1.6.2",
       "from": "compression@>=1.6.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/compression/-/compression-1.6.1.tgz",
-      "dependencies": {
-        "bytes": {
-          "version": "2.2.0",
-          "from": "bytes@2.2.0",
-          "resolved": "https://registry.npmjs.org/bytes/-/bytes-2.2.0.tgz"
-        }
-      }
+      "resolved": "https://registry.npmjs.org/compression/-/compression-1.6.2.tgz"
     },
     "content-disposition": {
       "version": "0.5.1",
