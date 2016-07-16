@@ -18,7 +18,7 @@
     "compression": "^1.6.0",
     "express": "^4.13.3",
     "libhub": "^1.0.0",
-    "memjs": "^0.9.1",
+    "memjs": "^0.10.0",
     "serve-static": "^1.10.0"
   }
 }
