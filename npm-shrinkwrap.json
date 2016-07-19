@@ -389,9 +389,9 @@
       "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz"
     },
     "memjs": {
-      "version": "0.9.1",
-      "from": "memjs@>=0.9.1 <0.10.0",
-      "resolved": "https://registry.npmjs.org/memjs/-/memjs-0.9.1.tgz"
+      "version": "0.10.0",
+      "from": "memjs@>=0.10.0 <0.11.0",
+      "resolved": "https://registry.npmjs.org/memjs/-/memjs-0.10.0.tgz"
     },
     "merge-descriptors": {
       "version": "1.0.1",
@@ -509,9 +509,9 @@
       "resolved": "https://registry.npmjs.org/request/-/request-2.73.0.tgz"
     },
     "request-promise": {
-      "version": "4.0.1",
+      "version": "4.0.2",
       "from": "request-promise@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.1.tgz"
+      "resolved": "https://registry.npmjs.com/request-promise/-/request-promise-4.0.2.tgz"
     },
     "send": {
       "version": "0.14.1",
@@ -551,9 +551,9 @@
       "resolved": "https://registry.npmjs.org/statuses/-/statuses-1.3.0.tgz"
     },
     "stealthy-require": {
-      "version": "0.1.0",
-      "from": "stealthy-require@>=0.1.0 <0.2.0",
-      "resolved": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-0.1.0.tgz"
+      "version": "1.0.0",
+      "from": "stealthy-require@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.com/stealthy-require/-/stealthy-require-1.0.0.tgz"
     },
     "string_decoder": {
       "version": "0.10.31",
