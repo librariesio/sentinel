@@ -368,9 +368,9 @@
       "resolved": "https://registry.npmjs.org/libhub/-/libhub-1.0.3.tgz"
     },
     "lodash": {
-      "version": "4.16.4",
+      "version": "4.16.5",
       "from": "lodash@>=4.13.1 <5.0.0",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.4.tgz"
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.16.5.tgz"
     },
     "media-typer": {
       "version": "0.3.0",
