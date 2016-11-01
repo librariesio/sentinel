@@ -20,7 +20,8 @@ Make sure you have the right engine installed, check the `.nvmrc`
 
 ```
 $> nvm use
-$> npm install
+$> npm install -g yarn
+$> yarn install
 $> export TOKEN=<GitHub token with access to your repos>
 $> npm start
 ```
