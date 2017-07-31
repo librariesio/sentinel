@@ -4,7 +4,7 @@
   "description": "Libraries.io Dependency Sentinel",
   "main": "server.js",
   "engines": {
-    "node": "7.9"
+    "node": "8.2.1"
   },
   "scripts": {
     "start": "node --harmony_destructuring server.js",
